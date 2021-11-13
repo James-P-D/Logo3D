@@ -30,7 +30,8 @@ from Generator import generate
 def usage():
     print("Usage:")
     print("python Logo3D.py source-file [options]")
-    print("       [options] - /d (debug mode)")
+    print("       [options] - /d         (debug mode)")
+    print("       [options] - /r a:x:y:z (rotate at angle 'a' around '(x,y,z)')")
     print()
     print("e.g. python Logo3D.py cude.lgo")
     os._exit(0)
@@ -57,13 +58,34 @@ def parse_args(argv):
         usage()
     filename = argv[1]
     debug_mode = False
-    for i in range(2, len(argv)):
+    (rot_angle, rot_x, rot_y, rot_z) = (0, 0, 0, 0)
+
+    i = 2
+    while (i < len(argv)):
         if (argv[i] == "/d"):
             debug_mode = True
+        elif (argv[i] == "/r"):
+            i += 1
+            if (i == len(argv)):
+                print("Expected additional value after '/r'")
+                os._exit(1);
+            vals = argv[i].split(":")
+            if (len(vals) != 4):
+                print("Expected additional value after '/r' in the form 'a:x:y:z'")
+            try:
+                rot_angle = float(vals[0])
+                rot_x = float(vals[1])
+                rot_y = float(vals[2])
+                rot_z = float(vals[3])
+            except:
+                print(f"Problem parsing {argv[i]}")
+                os._exit(1)
+
         else:
             print(f"{argv[i]} is an unknown parameter")
             os._exit(1)
-    return (filename, debug_mode)
+        i += 1
+    return (filename, debug_mode, (rot_angle, rot_x, rot_y, rot_z))
 
 
 ###############################################
@@ -71,7 +93,7 @@ def parse_args(argv):
 ###############################################
 
 def main():
-    (filename, debug_mode) = parse_args(sys.argv)
+    (filename, debug_mode, (rot_angle, rot_x, rot_y, rot_z)) = parse_args(sys.argv)
     text = read_from_file(filename)
     tokens = tokenise(text, debug_mode)
     commands = parse(tokens, debug_mode)
@@ -125,7 +147,7 @@ def main():
 
 
 
-        #glRotatef(0.1, 1, 1, 1)
+        glRotatef(rot_angle, rot_x, rot_y, rot_z)
 
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
     
