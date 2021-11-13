@@ -32,6 +32,7 @@ def usage():
     print("python Logo3D.py source-file [options]")
     print("       [options] - /d         (debug mode)")
     print("       [options] - /r a:x:y:z (rotate at angle 'a' around '(x,y,z)')")
+    print("                              (defaults to 1:1:1:1)")
     print()
     print("e.g. python Logo3D.py cude.lgo")
     os._exit(0)
@@ -58,7 +59,7 @@ def parse_args(argv):
         usage()
     filename = argv[1]
     debug_mode = False
-    (rot_angle, rot_x, rot_y, rot_z) = (0, 0, 0, 0)
+    (rot_angle, rot_x, rot_y, rot_z) = (1, 1, 1, 1)
 
     i = 2
     while (i < len(argv)):
@@ -109,6 +110,7 @@ def main():
     glTranslatef(0.0, 0.0, perspective)
 
     (x, y, z) = (0, 0, 0)
+    rotate = False
 
     while True:
         for event in pg.event.get():
@@ -131,6 +133,8 @@ def main():
                     z = 0.1
                 elif event.key == pg.K_MINUS:
                     z = -0.1
+                elif event.key == pg.K_SPACE:
+                    rotate = not rotate
             elif event.type == pg.KEYUP:
                 if event.key == pg.K_RIGHT and x > 0:
                     x = 0
@@ -146,8 +150,8 @@ def main():
                     z = 0
 
 
-
-        glRotatef(rot_angle, rot_x, rot_y, rot_z)
+        if (rotate):
+            glRotatef(rot_angle, rot_x, rot_y, rot_z)
 
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
     
@@ -157,6 +161,7 @@ def main():
         glEnd()
 
         glTranslatef(x,y,z)
+
         if (debug_mode):
             print(f"{x}, {y}, {z}")
         
