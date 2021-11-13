@@ -1,0 +1,7 @@
+repeat 36 [
+	REPEAT 36 [
+	  fd 0.5
+	  rt 10
+	]
+	rt 10
+]
