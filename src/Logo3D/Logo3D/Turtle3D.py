@@ -1,18 +1,16 @@
 import math
 
 class Turtle3D():
-    x = 0
-    y = 0
-    z = 0
-    angle = 0
     
     def __init__(self):
-        pass
+        self.x = 0
+        self.y = 0
+        self.z = 0
+        self.angle = 0
 
     def move(self, d):
-        r = self.angle * (math.pi / 180)
-        self.x += (d * math.cos(r))
-        self.y += (d * math.sin(r))
+        self.x += (d * math.cos(math.radians(self.angle)))
+        self.y += (d * math.sin(math.radians(self.angle)))
 
     def turn(self, r):
         self.angle += r
