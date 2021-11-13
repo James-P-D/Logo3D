@@ -86,14 +86,47 @@ def main():
     perspective = -10
     glTranslatef(0.0, 0.0, perspective)
 
+    (x, y, z) = (0, 0, 0)
+
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 pg.quit()
                 return
+            elif event.type == pg.KEYDOWN:
+                if event.key == pg.K_ESCAPE:
+                    pg.quit()
+                    return
+                if event.key == pg.K_RIGHT:
+                    x = 0.1
+                elif event.key == pg.K_LEFT:
+                    x = -0.1
+                elif event.key == pg.K_UP:
+                    y = 0.1
+                elif event.key == pg.K_DOWN:
+                    y = -0.1
+                elif event.key == pg.K_EQUALS:
+                    z = 0.1
+                elif event.key == pg.K_MINUS:
+                    z = -0.1
+            elif event.type == pg.KEYUP:
+                if event.key == pg.K_RIGHT and x > 0:
+                    x = 0
+                elif event.key == pg.K_LEFT and x < 0:
+                    x = 0
+                elif event.key == pg.K_UP and y > 0:
+                    y = 0
+                elif event.key == pg.K_DOWN and y < 0:
+                    y = 0
+                elif event.key == pg.K_EQUALS and z > 0:
+                    z = 0
+                elif event.key == pg.K_MINUS and z < 0:
+                    z = 0
 
 
-        glRotatef(0.1, 1, 1, 1)
+
+        #glRotatef(0.1, 1, 1, 1)
+
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
     
         glBegin(GL_LINES)    
@@ -101,6 +134,10 @@ def main():
             glVertex3fv(pos)
         glEnd()
 
+        glTranslatef(x,y,z)
+        if (debug_mode):
+            print(f"{x}, {y}, {z}")
+        
 
         pg.display.flip()
         pg.time.wait(1)
