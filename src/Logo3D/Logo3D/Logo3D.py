@@ -160,7 +160,7 @@ def main():
             glVertex3fv(pos)
         glEnd()
 
-        glTranslatef(x,y,z)
+        glTranslatef(x, y, z)
 
         if (debug_mode):
             print(f"{x}, {y}, {z}")

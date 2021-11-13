@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/src/Logo3D/.vs/Logo3D/v16/*.suo
