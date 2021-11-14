@@ -65,3 +65,41 @@ PENUP | Lift pen
 PENDOWN | Drop pen
 HOME | Return turtle to (0, 0, 0)
 REPEAT N [ Commands ] | Repeat set of commands N times
+
+So, for example, we can draw a square with the following:
+
+```
+FD 1 RT 90
+FD 1 RT 90
+FD 1 RT 90
+FD 1 RT 90
+```
+
+We can be smarter and use a `REPEAT` loop:
+
+```
+REPEAT 4 [
+    FD 1
+    RT 90  
+]
+```
+
+Both programs will produce an image that looks like this:
+
+SCREENSHOT
+
+We can use move in all three dimensions by adding the `UT` or `DT` commands:
+
+```
+FD 1 UT 90
+FD 1 UT 90
+FD 1 LT 90
+```
+
+The above program will draw the partial outline of a square:
+
+SCREENSHOT
+
+Once we have our 3D image rendered we can use the <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd> and <kbd>↓</kbd> buttons on our keyboard to pan, and use <kbd>-</kbd> and <kbd>=</kbd> to zoom in and out:
+
+SCREENSHOT GIT
