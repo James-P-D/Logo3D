@@ -1,3 +1,10 @@
+# TODO:
+# * PENUP & PENDOWN
+# * HOME
+# * Update readme
+# * UT & DT
+# * Update readme
+
 ###############################################
 # Libraries
 ###############################################
@@ -98,7 +105,7 @@ def main():
     text = read_from_file(filename)
     tokens = tokenise(text, debug_mode)
     commands = parse(tokens, debug_mode)
-    positions = generate(commands, debug_mode)
+    all_pos_sequences = generate(commands, debug_mode)
     
     pg.init()
     display = (1300, 800)
@@ -156,8 +163,9 @@ def main():
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
     
         glBegin(GL_LINES)    
-        for pos in positions:
-            glVertex3fv(pos)
+        for pos_seq in all_pos_sequences:
+            for pos in pos_seq:
+                glVertex3fv(pos)
         glEnd()
 
         glTranslatef(x, y, z)

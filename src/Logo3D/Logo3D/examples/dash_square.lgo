@@ -1,0 +1,11 @@
+repeat 4 [
+	FD 1
+	PENUP
+	FD 1
+	PENDOWN
+	FD 1
+	PENUP
+	FD 1
+	PENDOWN
+	RT 90
+]
