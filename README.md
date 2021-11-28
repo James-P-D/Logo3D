@@ -23,7 +23,7 @@ pip install PyOpenGL PyOpenGL_accelerate
 pip uninstall PyOpenGL PyOpenGL_accelerate
 ```
 
-...then visit [this site](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl) and download the appropriate .whl files for your Python version and OS. Since I am using Python 3.7 on Windows x86 I needed to download `PyOpenGL_accelerate-3.1.5-cp37-cp37m-win_amd64.whl` and `PyOpenGL-3.1.5-cp37-cp37m-win_amd64.whl` which could then be installed with the following:
+...then visit [Christoph Gohlke's website](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl) and download the appropriate .whl files for your Python version and OS. Since I am using Python 3.7 on Windows x86 I needed to download `PyOpenGL_accelerate-3.1.5-cp37-cp37m-win_amd64.whl` and `PyOpenGL-3.1.5-cp37-cp37m-win_amd64.whl` which could then be installed with the following:
 
 ```
 pip install PyOpenGL_accelerate-3.1.5-cp37-cp37m-win_amd64.whl --force-reinstall
@@ -47,7 +47,7 @@ The first parameter should be a Logo source code file.
 
 The `/d` parameter can be used to specify debug-mode, and will cause the program to output additional information during the tokenising, parsing and executing phases. If your Logo script doesn't run, try enabling this flag to see where the syntax error is.
 
-The `/r` parameter can be used to specify rotation angle and `(x,y,z)` location for performing rotations once the 3D model has been rendered.
+The `/r` parameter can be used to specify rotation angle `a` around the location `(x,y,z)` for performing rotations once the 3D model has been rendered.
 
 ## Logo Commands
 
@@ -55,16 +55,16 @@ The program supports the following commands:
 
 Command | Meaning
 ------- | -------------
-FD X | Move turtle forward X units
-BK X | Move turtle forward X units
-RT D | Turn turtle right D degrees
-LT D | Turn turtle left D degrees
-UT D | Turn turtle up D degrees
-DT D | Turn turtle down D degrees
-PENUP | Lift pen
-PENDOWN | Drop pen
-HOME | Return turtle to (0, 0, 0)
-REPEAT N [ Commands ] | Repeat set of commands N times
+`FD X` | Move turtle forward `X` units
+`BK X` | Move turtle forward `X` units
+`RT D` | Turn turtle right `D` degrees
+`LT D` | Turn turtle left `D` degrees
+`UT D` | Turn turtle up `D` degrees
+`DT D` | Turn turtle down `D` degrees
+`PENUP` | Lift pen
+`PENDOWN` | Drop pen
+`HOME` | Return turtle to (0, 0, 0)
+`REPEAT N [ Commands ]` | Repeat set of commands `N` times
 
 So, for example, we can draw a square with the following:
 
@@ -102,4 +102,4 @@ SCREENSHOT
 
 Once we have our 3D image rendered we can use the <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd> and <kbd>↓</kbd> buttons on our keyboard to pan, and use <kbd>-</kbd> and <kbd>=</kbd> to zoom in and out:
 
-SCREENSHOT GIT
+SCREENSHOT GIF
