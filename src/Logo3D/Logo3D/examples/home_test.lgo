@@ -1,12 +1,16 @@
 FD 1
 RT 90
 FD 1
+LT 90
+FD 1
 HOME
 
 rt 90
 
 FD 1
 RT 90
+FD 1
+LT 90
 FD 1
 HOME
 
@@ -15,11 +19,15 @@ rt 180
 FD 1
 RT 90
 FD 1
+LT 90
+FD 1
 HOME
 
 rt 270
 
 FD 1
 RT 90
+FD 1
+LT 90
 FD 1
 HOME

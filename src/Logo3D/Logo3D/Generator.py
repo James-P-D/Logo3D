@@ -26,7 +26,8 @@ def generate_moves(tokens, index, all_pos_sequences, current_pos_sequence, turtl
             elif (command == HOME):
                 turtle.x = 0
                 turtle.y = 0
-                turtle.angle = 0
+                turtle.horizontal_angle = 0
+                turtle.vertical_angle = 0
         elif len(token) == 2:
             (command, param) = token
             if (command not in [FORWARD, BACKWARD, RIGHT_TURN, LEFT_TURN, UP_TURN, DOWN_TURN]):
@@ -50,9 +51,13 @@ def generate_moves(tokens, index, all_pos_sequences, current_pos_sequence, turtl
                     current_pos_sequence.append((x1, y1, z1))
                     current_pos_sequence.append((x2, y2, z2))
             elif (command == RIGHT_TURN):
-                turtle.turn(param)
+                turtle.horizontal_turn(param)
             elif (command == LEFT_TURN):
-                turtle.turn(-param)
+                turtle.horizontal_turn(-param)
+            elif (command == UP_TURN):
+                turtle.vertical_turn(param)
+            elif (command == DOWN_TURN):
+                turtle.vertical_turn(-param)
             else:
                 print("NOT YET IMPLEMENTED!")
                 os._exit(1)

@@ -1,7 +1,4 @@
 # TODO:
-# * PENUP & PENDOWN
-# * HOME
-# * Update readme
 # * UT & DT
 # * Update readme
 
