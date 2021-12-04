@@ -1,6 +1,8 @@
 # Logo3D
 3D Logo interpreter in Python using OpenGL
 
+![Screenshot](https://github.com/James-P-D/Logo3D/blob/main/screenshot.gif)
+
 ## Setup
 
 **Read this entire section before you start running pip commands!**
@@ -35,6 +37,7 @@ pip install PyOpenGL-3.1.5-cp37-cp37m-win_amd64.whl --force-reinstall
 Once your environment is setup correctly, you should be able to run the main `Logo3D.py` file from your terminal:
 
 ```
+c:\>python Logo3D.py
 python Logo3D.py source-file [options]
        [options] - /d         (debug mode)
        [options] - /r a:x:y:z (rotate at angle 'a' around '(x,y,z)')
@@ -86,7 +89,7 @@ REPEAT 4 [
 
 Both programs will produce an image that looks like this:
 
-SCREENSHOT
+![Square](https://github.com/James-P-D/Logo3D/blob/main/square.png)
 
 We can use move in all three dimensions by adding the `UT` or `DT` commands:
 
@@ -98,8 +101,8 @@ FD 1 LT 90
 
 The above program will draw the partial outline of a square:
 
-SCREENSHOT
+![Cube](https://github.com/James-P-D/Logo3D/blob/main/cube.png)
 
 Once we have our 3D image rendered we can use the <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd> and <kbd>↓</kbd> buttons on our keyboard to pan, and use <kbd>-</kbd> and <kbd>=</kbd> to zoom in and out:
 
-SCREENSHOT GIF
+![Cube_Rotate](https://github.com/James-P-D/Logo3D/blob/main/cube.gif)
