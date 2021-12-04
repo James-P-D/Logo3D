@@ -108,7 +108,7 @@ The above program will draw the partial outline of a cube:
 
 ![Cube](https://github.com/James-P-D/Logo3D/blob/main/cube.png)
 
-Once we have our 3D image rendered we can use the <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd> and <kbd>↓</kbd> buttons on our keyboard to pan, and use <kbd>-</kbd> and <kbd>=</kbd> to zoom in and out:
+Once we have our 3D image rendered we can use the <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd> and <kbd>↓</kbd> buttons on our keyboard to pan, <kbd>-</kbd> and <kbd>=</kbd> to zoom in and out, and <kbd>space</kbd> to toggle rotation:
 
 ![Cube_Rotate](https://github.com/James-P-D/Logo3D/blob/main/cube.gif)
 
