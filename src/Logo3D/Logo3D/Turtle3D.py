@@ -16,18 +16,9 @@ class Turtle3D():
     def move(self, d):
         r1 = math.radians(self.horizontal_angle)
         r2 = math.radians(self.vertical_angle)
-                
-        x_v1 = math.cos(r1) + math.sin(r1) + 0
-        y_v1 = -math.sin(r1) + math.cos(r1) + 0
-        z_v1 = 0 + 0 + 1
-
-        x_v2 = math.cos(r2) + 0 + math.sin(r2)
-        y_v2 = 0 + 1 + 0
-        z_v2 = -math.sin(r2) + 0 + math.cos(r2)
-
-        self.x += (d * x_v1) * (d * x_v2)
-        self.y += (d * y_v1) * (d * y_v2)
-        self.z += (d * z_v1) * (d * z_v2)
+        self.x += d * (math.cos(r2) * math.cos(r1))
+        self.y += d * (math.cos(r2) * math.sin(r1))
+        self.z += d * (math.sin(r2))
 
     def horizontal_turn(self, r):
         self.horizontal_angle += r

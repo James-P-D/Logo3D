@@ -134,7 +134,7 @@ def parse_to_commands(tokens, index, open_bracket_count, debug_mode):
 
 def parse(tokens, debug_mode):
     if (debug_mode):
-        print("Parsing")
+        print("Parsing...")
 
     (commands, index, open_bracket_count) = parse_to_commands(tokens, 0, 0, debug_mode)
     if (open_bracket_count != 0):

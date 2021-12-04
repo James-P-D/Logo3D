@@ -1,0 +1,7 @@
+REPEAT 37 [
+	REPEAT 37 [
+		FD 0.2
+		UT 10
+	]
+	RT 10
+]

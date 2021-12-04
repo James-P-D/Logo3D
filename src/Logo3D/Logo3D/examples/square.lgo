@@ -1,8 +1,4 @@
-FD 1
-rt 90
-FD 1
-rt 90
-FD 1
-rt 90
-FD 1
-rt 90
+REPEAT 4 [
+	FD 3
+	RT 90
+]

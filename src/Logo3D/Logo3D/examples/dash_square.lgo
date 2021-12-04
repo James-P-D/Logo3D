@@ -1,4 +1,4 @@
-repeat 4 [
+REPEAT 4 [
 	FD 1
 	PENUP
 	FD 1

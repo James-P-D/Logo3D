@@ -125,7 +125,7 @@ def main():
                 if event.key == pg.K_ESCAPE:
                     pg.quit()
                     return
-                if event.key == pg.K_RIGHT:
+                elif event.key == pg.K_RIGHT:
                     x = 0.1
                 elif event.key == pg.K_LEFT:
                     x = -0.1
@@ -167,8 +167,8 @@ def main():
 
         glTranslatef(x, y, z)
 
-        if (debug_mode):
-            print(f"{x}, {y}, {z}")
+        #if (debug_mode):
+        #    print(f"{x}, {y}, {z}")
         
 
         pg.display.flip()

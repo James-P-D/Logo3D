@@ -12,7 +12,7 @@
     <Name>Logo3D</Name>
     <RootNamespace>Logo3D</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>examples\square.lgo /d</CommandLineArguments>
+    <CommandLineArguments>examples\cube.lgo /d</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -39,15 +39,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="examples\home_test.lgo" />
+    <Content Include="examples\crazy.lgo">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="examples\cube.lgo" />
+    <Content Include="examples\vertical_circle.lgo" />
+    <Content Include="examples\home.lgo" />
     <Content Include="examples\circles.lgo" />
     <Content Include="examples\circle.lgo" />
     <Content Include="examples\dash_square.lgo" />
     <Content Include="examples\square.lgo" />
     <Content Include="examples\vertical_square.lgo" />
-    <Content Include="examples\squares.lgo">
-      <SubType>Code</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="examples\" />

@@ -1,7 +1,0 @@
-REPEAT 360 [
-    REPEAT 4 [
-        FD 5
-        rt 90
-    ]
-    RT 1
-]

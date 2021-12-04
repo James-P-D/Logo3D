@@ -1,7 +1,16 @@
-repeat 36 [
-	REPEAT 36 [
-	  fd 0.5
-	  rt 10
-	]
-	rt 10
+REPEAT 36 [
+    FD 0.3
+    UT 10
+]
+REPEAT 36 [
+    FD 0.3
+    RT 10
+]
+REPEAT 36 [
+    FD 0.3
+    UT -10
+]
+REPEAT 36 [
+    FD 0.3
+    RT -10
 ]

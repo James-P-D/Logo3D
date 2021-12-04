@@ -87,7 +87,7 @@ def generate(tokens, debug_mode):
     all_pos_sequences.append(current_pos_sequence)
     
     if (debug_mode):
-        print("Generating")
+        print("Generating...")
         print(all_pos_sequences)
         print()
     return all_pos_sequences
