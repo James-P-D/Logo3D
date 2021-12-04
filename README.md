@@ -72,17 +72,17 @@ Command | Meaning
 So, for example, we can draw a square with the following:
 
 ```
-FD 1 RT 90
-FD 1 RT 90
-FD 1 RT 90
-FD 1 RT 90
+FD 3 RT 90
+FD 3 RT 90
+FD 3 RT 90
+FD 3 RT 90
 ```
 
 We can be smarter and use a `REPEAT` loop:
 
 ```
 REPEAT 4 [
-    FD 1
+    FD 3
     RT 90  
 ]
 ```
@@ -94,12 +94,17 @@ Both programs will produce an image that looks like this:
 We can use move in all three dimensions by adding the `UT` or `DT` commands:
 
 ```
-FD 1 UT 90
-FD 1 UT 90
-FD 1 LT 90
+FD 2 UT 90
+FD 2 UT 90
+FD 2 LT 90
+FD 2 LT 90
+FD 2 UT 90
+FD 2 UT 90
+FD 2 RT 90
+FD 2
 ```
 
-The above program will draw the partial outline of a square:
+The above program will draw the partial outline of a cube:
 
 ![Cube](https://github.com/James-P-D/Logo3D/blob/main/cube.png)
 
